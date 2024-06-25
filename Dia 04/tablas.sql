@@ -1,3 +1,7 @@
+create database ActividadD04_MySql2_CeballosKenneth;
+
+use ActividadD04_MySql2_CeballosKenneth;
+
 -- Creación de tablas
 create table Sucursales (
     id int auto_increment primary key,
