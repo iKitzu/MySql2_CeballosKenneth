@@ -1,0 +1,3 @@
+Conozco bien que este deberá ser realizado en un documento de Word, mas necesito convertirlo en formato PDF, impidiendo así cualquier modificación futura. Por el momento, dejaré un enlace de Notion; al concluir mi labor, procederé a la conversión a PDF para la entrega final
+
+<a href="https://onyx-session-80f.notion.site/MySql2-Actividad-AutoRental-d8098bf5200a4835ac064314d2ea267d?pvs=4">Y aquí está el enlace para acceder a toda la documentación específica</a>
