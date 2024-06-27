@@ -1,9 +1,9 @@
-create database ActividadD04_MySql2_CeballosKenneth;
+create database Actividad_Dia04_MySql2_CeballosKenneth;
 
-use ActividadD04_MySql2_CeballosKenneth;
+use Actividad_Dia04_MySql2_CeballosKenneth;
 
 -- Creación de tablas
-create table Sucursales (
+create table sucursales (
     id int auto_increment primary key,
     ciudad varchar(50),
     direccion varchar(100),
@@ -12,7 +12,7 @@ create table Sucursales (
     correo_electronico varchar(50)
 );
 
-create table Empleados (
+create table empleados (
     id int auto_increment primary key,
     sucursal_id int,
     cedula varchar(20),
@@ -22,10 +22,10 @@ create table Empleados (
     ciudad_residencia varchar(50),
     celular varchar(20),
     correo_electronico varchar(50),
-    foreign key (sucursal_id) references Sucursales(id)
+    foreign key (sucursal_id) references sucursales(id)
 );
 
-create table Clientes (
+create table clientes (
     id int auto_increment primary key,
     cedula varchar(20),
     nombres varchar(50),
@@ -36,20 +36,20 @@ create table Clientes (
     correo_electronico varchar(50)
 );
 
-create table Vehiculos (
+create table vehiculos (
     id int auto_increment primary key,
     tipo_vehiculo varchar(50),
     placa varchar(10),
     referencia varchar(50),
-    modelo int,
+    modelo year,
     puertas int,
     capacidad int,
     sunroof boolean,
-    motor varchar(20),
+    motor varchar(50),
     color varchar(20)
 );
 
-create table Alquileres (
+create table alquileres (
     id int auto_increment primary key,
     vehiculo_id int,
     cliente_id int,
@@ -64,9 +64,9 @@ create table Alquileres (
     porcentaje_descuento decimal(5, 2),
     valor_cotizado decimal(10, 2),
     valor_pagado decimal(10, 2),
-    foreign key (vehiculo_id) references Vehiculos(id),
-    foreign key (cliente_id) references Clientes(id),
-    foreign key (empleado_id) references Empleados(id),
-    foreign key (sucursal_salida_id) references Sucursales(id),
-    foreign key (sucursal_llegada_id) references Sucursales(id)
+    foreign key (vehiculo_id) references vehiculos(id),
+    foreign key (cliente_id) references clientes(id),
+    foreign key (empleado_id) references empleados(id),
+    foreign key (sucursal_salida_id) references sucursales(id),
+    foreign key (sucursal_llegada_id) references sucursales(id)
 );
