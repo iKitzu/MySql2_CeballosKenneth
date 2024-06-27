@@ -110,6 +110,37 @@ delete from alquileres
 where id = 1;
 
 
--- ********************************************************
--- *Consultas específicas y complejas para otros usuarios *
--- ********************************************************
+-- ************************************************************
+-- *Consultas específicas y complejas para los otros usuarios *
+-- ************************************************************
+
+-- * Empleado: 
+
+-- Consulta 1: Lista de clientes con más alquileres
+select 
+    c.id,
+    c.nombres,
+    c.apellidos,
+    count(a.id) as total_alquileres
+from 
+    clientes c
+join 
+    alquileres a on c.id = a.cliente_id
+group by 
+    c.id, c.nombres, c.apellidos
+order by 
+    total_alquileres desc;
+
+-- Consulta 2: Vehículos más alquilados por tipo
+select 
+    v.tipo_vehiculo,
+    v.referencia,
+    count(a.id) as total_alquileres
+from 
+    vehiculos v
+join 
+    alquileres a on v.id = a.vehiculo_id
+group by 
+    v.tipo_vehiculo, v.referencia
+order by 
+    total_alquileres desc;
