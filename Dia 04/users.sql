@@ -144,3 +144,44 @@ group by
     v.tipo_vehiculo, v.referencia
 order by 
     total_alquileres desc;
+
+
+-- * Cliente:
+
+-- Consulta 3: Disponibilidad de vehículos por ciudad
+
+select 
+    s.ciudad,
+    v.tipo_vehiculo,
+    v.referencia,
+    v.modelo,
+    v.color
+from 
+    sucursales s
+join 
+    vehiculos v on s.id = v.id
+left join 
+    alquileres a on v.id = a.vehiculo_id and a.fecha_llegada > current_date()
+where 
+    a.id is null
+order by 
+    s.ciudad, v.tipo_vehiculo;
+
+-- Consulta 4: Historial de alquileres de un cliente específico
+
+select 
+    c.nombres,
+    c.apellidos,
+    v.tipo_vehiculo,
+    v.placa,
+    a.fecha_salida,
+    a.fecha_llegada,
+    a.valor_pagado
+from 
+    alquileres a
+join 
+    clientes c on a.cliente_id = c.id
+join 
+    vehiculos v on a.vehiculo_id = v.id
+where 
+    c.cedula = '1234567890';
