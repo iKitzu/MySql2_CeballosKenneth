@@ -1,3 +1,8 @@
-Lamentablemente, cometí el error de haberlo hecho en Notion por la comodidad que ofrece, pero aquí tienes la documentación correspondiente en Word
+# Actividad Base de Datos - AutoRental
 
-<a href="https://docs.google.com/document/d/1Ad9mV3TORySfdjGiKJELzbiUMIyLbuhBHL9QEGlAlR4/edit?usp=sharing">(Esta es la version actualizada)</a>
+Este repositorio contiene la documentación y scripts SQL para la base de datos de AutoRental, así como los aplicativos de software desarrollados para la gestión de sucursales, vehículos y clientes.
+
+## Documentación
+
+La documentación completa del proyecto se encuentra en el siguiente documento Word:
+- [Documentación Completa de AutoRental](https://docs.google.com/document/d/1Ad9mV3TORySfdjGiKJELzbiUMIyLbuhBHL9QEGlAlR4/edit?usp=sharing)
